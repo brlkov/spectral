@@ -17,7 +17,7 @@ const Element = ({id, name, max, file}) => {
     }
 
     const deleteElement = async () => {
-        await axios.post("http://localhost:4000/api/delete-element", {id: id, name: name})
+        await axios.post("http://89.108.77.219:4000/api/delete-element", {id: id, name: name})
         document.location.reload()
     }
 

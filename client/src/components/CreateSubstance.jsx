@@ -22,7 +22,7 @@ const CreateSubstance = () => {
         formData.append('name', name)
         formData.append('max', max)
         formData.append('concentrations', JSON.stringify(concentrations))
-        await axios.post("http://localhost:4000/api/substance", formData).then(res => document.location.reload())
+        await axios.post("http://89.108.77.219:4000/api/substance", formData).then(res => document.location.reload())
     }
 
     return (

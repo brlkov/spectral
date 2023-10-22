@@ -13,7 +13,7 @@ const ElementsList = () => {
     }, [])
 
     const getElements = async () => {
-        return await axios.get("http://localhost:4000/api/get-elements")
+        return await axios.get("http://89.108.77.219:4000/api/get-elements")
     }
 
 

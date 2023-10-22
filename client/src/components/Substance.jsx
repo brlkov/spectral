@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Substance = ({id, name, max, percentages}) => {
     const deleteSubstance = async () => {
-        await axios.post("http://localhost:4000/api/delete-substance", {id: id, name: name})
+        await axios.post("http://89.108.77.219:4000/api/delete-substance", {id: id, name: name})
         document.location.reload()
     }
 

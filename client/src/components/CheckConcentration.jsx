@@ -9,7 +9,7 @@ const CheckConcentration = () => {
     const check = async () => {
         const formData = new FormData()
         formData.append('file', file)
-        await axios.post("http://localhost:4000/api/check", formData).then(res => {
+        await axios.post("http://89.108.77.219:4000/api/check", formData).then(res => {
             setResponse(res.data)
             console.log(res.data)
         })

@@ -11,7 +11,7 @@ const CreateElement = () => {
         const formData = new FormData()
         formData.append('name', name)
         formData.append('file', file)
-        await axios.post("http://localhost:4000/api/element", formData).then(res => setMax(res.data))
+        await axios.post("http://89.108.77.219:4000/api/element", formData).then(res => setMax(res.data))
         document.querySelector(".newElementResults").classList.add("open")
     }
 
@@ -20,7 +20,7 @@ const CreateElement = () => {
         formData.append('name', name)
         formData.append('max', JSON.stringify(max))
         formData.append('file', file)
-        await axios.post("http://localhost:4000/api/save-element", formData).then(res => document.location.reload())
+        await axios.post("http://89.108.77.219:4000/api/save-element", formData).then(res => document.location.reload())
     }
 
     const deleteNew = () => {
