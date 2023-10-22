@@ -1,0 +1,243 @@
+.checkConcentration {
+    margin: 60px 0;
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .checkConcentrationTools {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .inputFile {
+            flex: 1;
+            input {
+                display: none;
+            }
+            label {
+                height: 40px;
+                display: flex;
+                align-items: center;
+                padding: 10px 15px;
+                cursor: pointer;
+                background: #e6e6e6;
+                border-radius: 10px;
+                font-family: URW Gothic L, sans-serif;
+                font-weight: lighter;
+                font-size: 20px;
+                color: black;
+            }
+        }
+        #send {
+            height: 60px;
+            width: 120px;
+            margin-left: 20px;
+            cursor: pointer;
+            background: rgba(0,77,255,0.3);
+            border: none;
+            border-radius: 10px;
+            font-family: URW Gothic L, sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+            color: black;
+        }
+        #delete {
+            height: 60px;
+            width: 100px;
+            margin-left: 20px;
+            cursor: pointer;
+            background: rgba(235,7,0,0.3);
+            border: none;
+            border-radius: 10px;
+            font-family: URW Gothic L, sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+            color: black;
+        }
+    }
+
+    .checkConcentrationResults {
+        display: none;
+        margin-top: 20px;
+        font-size: 20px;
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+.substancesList {
+    h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .substance {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #e6e6e6;
+        border-radius: 10px;
+        font-size: 20px;
+
+        .substanceWrapper {
+            div {
+                margin-top: 10px;
+                p {
+                    margin-top: 5px;
+                }
+            }
+            .substanceName {
+                font-size: 25px;
+                margin: 0 0 20px 0;
+            }
+        }
+
+        button {
+            height: 40px;
+            width: 100px;
+            cursor: pointer;
+            background: rgba(235,7,0,0.3);
+            border: none;
+            border-radius: 10px;
+            font-family: URW Gothic L, sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+            color: black;
+        }
+    }
+
+}
+
+
+.newSubstance {
+    margin: 40px 0;
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .newSubstanceTools {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .newSubstanceToolsTop {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            input {
+                height: 40px;
+                border: none;
+                border-radius: 10px;
+                background: #e6e6e6;
+                padding: 10px 15px;
+                display: flex;
+                align-items: center;
+                font-family: URW Gothic L, sans-serif;
+                font-weight: lighter;
+                color: black;
+                font-size: 20px;
+                &::placeholder {
+                    color: black;
+                    opacity: 1;
+                    padding: 0;
+                }
+                &:nth-child(1) {
+                    flex: 4;
+                }
+                &:nth-child(2) {
+                    flex: 1;
+                }
+            }
+        }
+
+        .newSubstanceToolsMiddle {
+
+            .newSubstanceToolsConcentration {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 40px;
+                background: #e6e6e6;
+                border-radius: 10px;
+                padding: 10px 15px;
+                font-size: 20px;
+
+                button {
+                    height: 100%;
+                    border: none;
+                    border-radius: 0;
+                    border-left: 1px solid black;
+                    padding-left: 15px;
+                    background: none;
+                    font-size: 20px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .newSubstanceToolsInputs {
+                display: flex;
+                gap: 40px;
+                margin-top: 20px;
+
+                input {
+                    flex: 2;
+                    height: 40px;
+                    border: none;
+                    border-radius: 10px;
+                    background: #e6e6e6;
+                    padding: 10px 15px;
+                    display: flex;
+                    align-items: center;
+                    font-family: URW Gothic L, sans-serif;
+                    font-weight: lighter;
+                    color: black;
+                    font-size: 20px;
+                    &::placeholder {
+                        color: black;
+                        opacity: 1;
+                        padding: 0;
+                    }
+                }
+                button {
+                    width: 120px;
+                    background: rgba(235,7,0,0.3);
+                }
+            }
+        }
+
+        button {
+            height: 60px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            background: rgba(0,77,255,0.3);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.open {
+    display: flex !important;
+}
+
+.chosen {
+    color: black !important;
+}
