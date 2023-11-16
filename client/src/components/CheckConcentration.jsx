@@ -1,5 +1,7 @@
 import React, {useRef, useState} from 'react';
 import axios from "axios";
+import jsPDF from 'jspdf'
+import '../fonts/TimesNewRoman-normal.js'
 
 const CheckConcentration = () => {
     const [file, setFile] = useState(null)
@@ -11,9 +13,44 @@ const CheckConcentration = () => {
         formData.append('file', file)
         await axios.post("http://89.108.77.219:4000/api/check", formData).then(res => {
             setResponse(res.data)
-            console.log(res.data)
         })
         document.querySelector(".checkConcentrationResults").classList.add("open")
+    }
+
+    const substanceReportGenerate = () => {
+        let doc = new jsPDF('portrait', 'px', 'a4')
+        doc.addFont("TimesNewRoman-normal.ttf", "TimesNewRoman", "normal");
+        doc.setFont('TimesNewRoman');
+        doc.setFontSize(14);
+        doc.text("Отчет о наличии примесей в составе вещества", 40, 40)
+        let date = new Date()
+        let time = date.toLocaleString()
+        doc.text(time, 40, 60)
+        doc.text(`В выбранном веществе обнаружено ${response.length} примесей:`, 40, 100)
+        let y = 100
+        response.map(paragraph => {
+            y = y + 20
+            doc.text(paragraph.split(`(`)[0], 40, y)
+        })
+        doc.save('Отчет о наличии примесей')
+    }
+
+    const concentrationReportGenerate = () => {
+        let doc = new jsPDF('portrait', 'px', 'a4')
+        doc.addFont("TimesNewRoman-normal.ttf", "TimesNewRoman", "normal");
+        doc.setFont('TimesNewRoman');
+        doc.setFontSize(14);
+        doc.text("Отчет о процентном содержании содержащихся в веществе примесей", 40, 40)
+        let date = new Date()
+        let time = date.toLocaleString()
+        doc.text(time, 40, 60)
+        doc.text(`В выбранном веществе обнаружены следующие примеси и их процентное содержание:`, 40, 100)
+        let y = 100
+        response.map(paragraph => {
+            y = y + 20
+            doc.text(paragraph, 40, y)
+        })
+        doc.save('Отчет о процентном содержании примесей')
     }
 
     const deleteNew = () => {
@@ -58,6 +95,20 @@ const CheckConcentration = () => {
                                 {response.map(paragraph =>
                                     <p key={paragraph}>{paragraph}</p>
                                 )}
+                                <div className="reportButtons">
+                                    <button
+                                        onClick={substanceReportGenerate}
+                                        className="reportButton"
+                                    >
+                                        Скачать отчет о наличии примесей
+                                    </button>
+                                    <button
+                                        onClick={concentrationReportGenerate}
+                                        className="reportButton"
+                                    >
+                                        Скачать отчет о процентном содержании примесей
+                                    </button>
+                                </div>
                             </div>
                 }
             </div>

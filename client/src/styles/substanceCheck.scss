@@ -65,6 +65,23 @@
         p {
             margin-top: 10px;
         }
+        .reportButtons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+
+            .reportButton {
+                border: none;
+                font-size: 20px;
+                background: transparent;
+                text-decoration: underline;
+                text-align: left;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
 
